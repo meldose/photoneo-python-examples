@@ -24,7 +24,7 @@ def main(device_sn: str):
             enable_hardware_trigger(features)
 
             ia.start()
-            timeout = 180
+            timeout = 5
             print(f"Wait {timeout}s for hw-trigger signal...")
             with ia.fetch(timeout=timeout) as buffer:
                 component_list: List[Component2DImage] = buffer.payload.components
